@@ -42,9 +42,8 @@ namespace JambOffuceApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("JambScore")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("JambScore")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()

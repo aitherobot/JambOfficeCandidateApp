@@ -10,7 +10,7 @@ public class Candidate
     public string PhoneNumber { get; set; }
     public string Email { get; set; }
     public string DepartmentApplied { get; set; }
-    public string JambScore { get; set; }
+    public int JambScore { get; set; }
 
     public ICollection<DocumentStatus> Documents { get; set; } = new List<DocumentStatus>();
 }

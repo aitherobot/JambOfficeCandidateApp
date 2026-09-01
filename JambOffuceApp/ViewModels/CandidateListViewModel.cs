@@ -1,17 +1,19 @@
 using System.Collections.ObjectModel;
+using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using JambOffuceApp.Data;
 using JambOffuceApp.Models;
+using JambOffuceApp.Views;
 
 namespace JambOffuceApp.ViewModels;
 
 public partial class CandidateListViewModel : ObservableObject
 {
-    private readonly AppDbContext _db = new AppDbContext();
+    private readonly AppDbContext _db = new ();
     
     [ObservableProperty] 
-    private ObservableCollection<Candidate> _candidates = new ObservableCollection<Candidate>();
+    private ObservableCollection<Candidate> _candidates = new ();
 
     [ObservableProperty] private string _searchText;
 
@@ -45,6 +47,24 @@ public partial class CandidateListViewModel : ObservableObject
     {
         if (parameter is not Candidate candidate) return;
 
+        _db.Candidates.Remove(candidate);
+        _db.SaveChanges();
         Candidates.Remove(candidate);
+    }
+
+    [RelayCommand]
+    private void OpenAddCandidate()
+    {
+        var dialog = new AddCandidateView
+        {
+            Owner = Application.Current.MainWindow
+        };
+        
+        dialog.ShowDialog();
+
+        if (dialog.WasSaved)
+        {
+            LoadCandidates();
+        }
     }
 }

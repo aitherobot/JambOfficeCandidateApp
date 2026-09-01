@@ -21,6 +21,7 @@
         <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
             <TextBox Width="250" Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <Button Content="Search" Command="{Binding SearchCommand}" Margin="8,0,0,0"></Button>
+            <Button Content="Add Candidate" Command="{Binding OpenAddCandidateCommand}" Margin="8,0,0,0"></Button>
         </StackPanel>
         
         <DataGrid Grid.Row="1" ItemsSource="{Binding Candidates}" AutoGenerateColumns="False">
