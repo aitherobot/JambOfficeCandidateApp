@@ -39,6 +39,11 @@
                                         CommandParameter="{Binding}"
                                         Margin="0,0,4,0"></Button>
                                 
+                                <Button Content="Documents" 
+                                        Command="{Binding DataContext.OpenDocumentTrackingCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"
+                                        Margin="0,0,4,0"></Button>
+                                
                                 <Button Content="Delete" 
                                         Command="{Binding DataContext.DeleteCandidateCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                         CommandParameter="{Binding}"

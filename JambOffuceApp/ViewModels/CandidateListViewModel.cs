@@ -74,6 +74,20 @@ public partial class CandidateListViewModel : ObservableObject
     }
 
     [RelayCommand]
+    private void OpenDocumentTracking(object parameter)
+    {
+        if (parameter is not Candidate candidate) return;
+
+        var dialog = new DocumentTrackingView()
+        {
+            Owner = Application.Current.MainWindow
+        };
+        
+        dialog.SetCandidate(candidate);
+        dialog.ShowDialog();
+    }
+
+    [RelayCommand]
     private void OpenAddCandidate()
     {
         var dialog = new AddCandidateView
