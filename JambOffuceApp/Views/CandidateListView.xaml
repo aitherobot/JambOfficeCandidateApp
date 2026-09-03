@@ -24,7 +24,7 @@
             <Button Content="Add Candidate" Command="{Binding OpenAddCandidateCommand}" Margin="8,0,0,0"></Button>
         </StackPanel>
         
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Candidates}" AutoGenerateColumns="False">
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Candidates}" AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Reg Number" Binding="{Binding RegNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}"></DataGridTextColumn>
@@ -33,9 +33,17 @@
                 <DataGridTemplateColumn Header="Actions">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Delete" 
-                                    Command="{Binding DataContext.DeleteCandidateCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
-                                    CommandParameter="{Binding}"></Button>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" 
+                                        Command="{Binding DataContext.EditCandidateCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"
+                                        Margin="0,0,4,0"></Button>
+                                
+                                <Button Content="Delete" 
+                                        Command="{Binding DataContext.DeleteCandidateCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        CommandParameter="{Binding}"
+                                        Margin="0,0,4,0"></Button>
+                            </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

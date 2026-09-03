@@ -5,6 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 using JambOffuceApp.Data;
 using JambOffuceApp.Models;
 using JambOffuceApp.Views;
+using Microsoft.EntityFrameworkCore;
 
 namespace JambOffuceApp.ViewModels;
 
@@ -24,7 +25,7 @@ public partial class CandidateListViewModel : ObservableObject
 
     private void LoadCandidates()
     {
-        Candidates = new ObservableCollection<Candidate>(_db.Candidates.ToList());
+        Candidates = new ObservableCollection<Candidate>(_db.Candidates.AsNoTracking().ToList());
     }
 
     [RelayCommand]
@@ -50,6 +51,26 @@ public partial class CandidateListViewModel : ObservableObject
         _db.Candidates.Remove(candidate);
         _db.SaveChanges();
         Candidates.Remove(candidate);
+    }
+
+    [RelayCommand]
+    private void EditCandidate(object parameter)
+    {
+        if (parameter is not Candidate candidate) return;
+
+        var dialog = new AddCandidateView()
+        {
+            Owner = Application.Current.MainWindow
+        };
+        
+        dialog.SetEditCandidate(candidate);
+        
+        dialog.ShowDialog();
+
+        if (dialog.WasSaved)
+        {
+            LoadCandidates();
+        }
     }
 
     [RelayCommand]

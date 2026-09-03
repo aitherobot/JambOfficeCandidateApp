@@ -10,6 +10,9 @@ public partial class AddCandidateViewModel : ObservableObject
 {
     private readonly AppDbContext _db =  new AppDbContext();
 
+    private Candidate _editingCandidate;
+
+    [ObservableProperty] private bool isEditMode;
     [ObservableProperty] private string regNumber;
     [ObservableProperty] private string fullName;
     [ObservableProperty] private DateTime? dateOfBirth;
@@ -23,25 +26,56 @@ public partial class AddCandidateViewModel : ObservableObject
 
     public event Action RequestClose;
 
+    public void LoadForEdit(Candidate candidate)
+    {
+        _editingCandidate = _db.Candidates.Find(candidate.Id);
+        IsEditMode = true;
+
+        RegNumber = _editingCandidate.RegNumber;
+        FullName = _editingCandidate.FullName;
+        DateOfBirth = _editingCandidate.DateOfBirth == DateTime.MinValue ? null : _editingCandidate.DateOfBirth;
+        Gender = _editingCandidate.Gender;
+        PhoneNumber = _editingCandidate.PhoneNumber;
+        Email = _editingCandidate.Email;
+        DepartmentApplied = _editingCandidate.DepartmentApplied;
+        JambScore = _editingCandidate.JambScore;
+    }
+
     [RelayCommand]
     private void Save()
     {
         if (string.IsNullOrWhiteSpace(regNumber) || string.IsNullOrWhiteSpace(fullName)) return;
 
-        var candidate = new Candidate
+        if (IsEditMode && _editingCandidate != null)
         {
-            RegNumber = RegNumber,
-            FullName = FullName,
-            DateOfBirth = DateOfBirth ?? DateTime.MinValue,
-            Gender = Gender,
-            PhoneNumber = PhoneNumber,
-            Email = Email,
-            DepartmentApplied = DepartmentApplied,
-            JambScore = JambScore
-        };
+            _editingCandidate.RegNumber = RegNumber;
+            _editingCandidate.FullName = FullName;
+            _editingCandidate.DateOfBirth = DateOfBirth ??  DateTime.MinValue;
+            _editingCandidate.Gender = Gender;
+            _editingCandidate.PhoneNumber = PhoneNumber;
+            _editingCandidate.Email = Email;
+            _editingCandidate.DepartmentApplied = DepartmentApplied;
+            _editingCandidate.JambScore = JambScore;
 
-        _db.Candidates.Add(candidate);
-        _db.SaveChanges();
+            _db.SaveChanges();
+        }
+        else
+        {
+            var candidate = new Candidate
+            {
+                RegNumber = RegNumber,
+                FullName = FullName,
+                DateOfBirth = DateOfBirth ?? DateTime.MinValue,
+                Gender = Gender,
+                PhoneNumber = PhoneNumber,
+                Email = Email,
+                DepartmentApplied = DepartmentApplied,
+                JambScore = JambScore
+            };
+
+            _db.Candidates.Add(candidate);
+            _db.SaveChanges();
+        }
         
         WasSaved = true;
         RequestClose?.Invoke();
