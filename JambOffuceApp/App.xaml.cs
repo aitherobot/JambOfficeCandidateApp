@@ -19,5 +19,22 @@ public partial class App : Application
         {
             db.Database.Migrate();
         }
+        
+        ShutdownMode = ShutdownMode.OnExplicitShutdown;
+        
+        var loginView = new Views.LoginView();
+        loginView.ShowDialog();
+
+        if (loginView.LoggedInUser == null)
+        {
+            Shutdown();
+            return;
+        }
+        
+        ShutdownMode = ShutdownMode.OnMainWindowClose;
+        
+        var mainWindow = new MainWindow();
+        MainWindow = mainWindow;
+        mainWindow.Show();
     }
 }
