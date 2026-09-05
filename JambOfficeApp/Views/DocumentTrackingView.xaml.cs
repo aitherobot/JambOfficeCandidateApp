@@ -16,11 +16,11 @@ public partial class DocumentTrackingView : Window
         }
     }
 
-    public void SetCandidate(Candidate candidate)
+    public async Task SetCandidateAsync(Candidate candidate)
     {
         if (DataContext is DocumentTrackingViewModel vm)
         {
-            vm.LoadForCandidate(candidate);
+            await vm.LoadForCandidate(candidate);
         }
     }
 }

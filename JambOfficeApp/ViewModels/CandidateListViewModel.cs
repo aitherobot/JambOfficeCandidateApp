@@ -4,8 +4,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using JambOfficeApp.Data;
 using JambOfficeApp.Models;
+using JambOfficeApp.Services;
 using JambOfficeApp.Views;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32;
 
 namespace JambOfficeApp.ViewModels;
 
@@ -20,16 +22,17 @@ public partial class CandidateListViewModel : ObservableObject
 
     public CandidateListViewModel()
     {
-        LoadCandidates();
+        _ = LoadCandidatesAsync();
     }
 
-    private void LoadCandidates()
+    private async Task LoadCandidatesAsync()
     {
-        Candidates = new ObservableCollection<Candidate>(_db.Candidates.AsNoTracking().ToList());
+        var results = await _db.Candidates.AsNoTracking().ToListAsync();
+        Candidates = new ObservableCollection<Candidate>(results);
     }
 
     [RelayCommand]
-    private void Search()
+    private async Task Search()
     {
         var query = _db.Candidates.AsQueryable();
 
@@ -40,21 +43,22 @@ public partial class CandidateListViewModel : ObservableObject
                 c.FullName.Contains(_searchText));
         }
 
-        Candidates = new ObservableCollection<Candidate>(query.ToList());
+        var results = await query.ToListAsync();
+        Candidates = new ObservableCollection<Candidate>(results);
     }
 
     [RelayCommand]
-    private void DeleteCandidate(object parameter)
+    private async Task DeleteCandidate(object parameter)
     {
         if (parameter is not Candidate candidate) return;
 
         _db.Candidates.Remove(candidate);
-        _db.SaveChanges();
+        await _db.SaveChangesAsync();
         Candidates.Remove(candidate);
     }
 
     [RelayCommand]
-    private void EditCandidate(object parameter)
+    private async Task EditCandidate(object parameter)
     {
         if (parameter is not Candidate candidate) return;
 
@@ -63,18 +67,18 @@ public partial class CandidateListViewModel : ObservableObject
             Owner = Application.Current.MainWindow
         };
         
-        dialog.SetEditCandidate(candidate);
+        await dialog.SetEditCandidateAsync(candidate);
         
         dialog.ShowDialog();
 
         if (dialog.WasSaved)
         {
-            LoadCandidates();
+            await LoadCandidatesAsync();
         }
     }
 
     [RelayCommand]
-    private void OpenDocumentTracking(object parameter)
+    private async Task OpenDocumentTracking(object parameter)
     {
         if (parameter is not Candidate candidate) return;
 
@@ -83,8 +87,25 @@ public partial class CandidateListViewModel : ObservableObject
             Owner = Application.Current.MainWindow
         };
         
-        dialog.SetCandidate(candidate);
+        await dialog.SetCandidateAsync(candidate);
         dialog.ShowDialog();
+    }
+
+    [RelayCommand]
+    private void ExportToExcel()
+    {
+        var saveDialog = new SaveFileDialog
+        {
+            Filter = "Excel Workbook (*.xlsx)|*.xlsx",
+            FileName = "Candidates.xlxs"
+        };
+        
+        if (saveDialog.ShowDialog() != true) return;
+
+        var exportService = new ExportService();
+        exportService.ExportCandidatesToExcel(_db.Candidates.AsNoTracking().ToList(), saveDialog.FileName);
+        
+        MessageBox.Show("Export completed successfully.", "Export",  MessageBoxButton.OK, MessageBoxImage.Information);
     }
 
     [RelayCommand]
@@ -99,7 +120,7 @@ public partial class CandidateListViewModel : ObservableObject
 
         if (dialog.WasSaved)
         {
-            LoadCandidates();
+            _ = LoadCandidatesAsync();
         }
     }
 }

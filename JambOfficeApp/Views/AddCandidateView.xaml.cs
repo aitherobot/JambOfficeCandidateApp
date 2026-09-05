@@ -16,11 +16,11 @@ public partial class AddCandidateView : Window
         }
     }
 
-    public void SetEditCandidate(Candidate candidate)
+    public async Task SetEditCandidateAsync(Candidate candidate)
     {
         if (DataContext is AddCandidateViewModel vm)
         {
-            vm.LoadForEdit(candidate);
+            await vm.LoadForEdit(candidate);
             Title = "Edit Candidate";
             HeaderText.Text="Edit Candidate";
         }

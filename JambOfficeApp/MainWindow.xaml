@@ -28,6 +28,14 @@
             <TextBlock Text="Jamb Office - Candidates Record Management" FontSize="18" VerticalAlignment="Center"></TextBlock>
         </materialDesign:ColorZone>
         
-        <views:CandidateListView Grid.Row="1"></views:CandidateListView>
+        <TabControl Grid.Row="1" materialDesign:ColorZoneAssist.Mode="PrimaryLight" SelectionChanged="TabControl_OnSelectionChanged">
+            <TabItem Header="Dashboard">
+                <views:DashboardView x:Name="DashboardTab"></views:DashboardView>
+            </TabItem>
+            
+            <TabItem Header="Candidates">
+                <views:CandidateListView></views:CandidateListView>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

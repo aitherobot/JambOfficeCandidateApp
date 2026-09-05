@@ -1,0 +1,47 @@
+<UserControl x:Class="JambOfficeApp.Views.DashboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:vm="clr-namespace:JambOfficeApp.ViewModels"
+             mc:Ignorable="d">
+    
+    <UserControl.DataContext>
+        <vm:DashboardViewModel></vm:DashboardViewModel>
+    </UserControl.DataContext>
+    
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+            <TextBlock Text="Dashboard" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+        
+        <UniformGrid Grid.Row="1" Columns="3" Rows="1">
+            <materialDesign:Card Margin="8" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Total Candidates" FontSize="14" Opacity="0.7"/>
+                    <TextBlock Text="{Binding TotalCandidates}" FontSize="36" FontWeight="Bold" Margin="0,8,0,0"/>
+                </StackPanel>
+            </materialDesign:Card>
+            
+            <materialDesign:Card Margin="8" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Pending Verification" FontSize="14" Opacity="0.7"></TextBlock>
+                    <TextBlock Text="{Binding DocumentsPendingVerification}" FontSize="36" FontWeight="Bold" Margin="0,8,0,0"></TextBlock>
+                </StackPanel>
+            </materialDesign:Card>
+            
+            <materialDesign:Card Margin="8" Padding="20">
+                <StackPanel>
+                    <TextBlock Text="Documents Verified" FontSize="14" Opacity="0.7"></TextBlock>
+                    <TextBlock Text="{Binding DocumentsFullyVerified}" FontSize="36" FontWeight="Bold" Margin="0,8,0,0"></TextBlock>
+                </StackPanel>
+            </materialDesign:Card>
+        </UniformGrid>
+    </Grid>
+</UserControl>

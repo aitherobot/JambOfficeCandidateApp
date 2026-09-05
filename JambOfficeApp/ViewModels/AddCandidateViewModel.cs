@@ -26,9 +26,9 @@ public partial class AddCandidateViewModel : ObservableObject
 
     public event Action RequestClose;
 
-    public void LoadForEdit(Candidate candidate)
+    public async Task LoadForEdit(Candidate candidate)
     {
-        _editingCandidate = _db.Candidates.Find(candidate.Id);
+        _editingCandidate = await _db.Candidates.FindAsync(candidate.Id);
         IsEditMode = true;
 
         RegNumber = _editingCandidate.RegNumber;
@@ -42,7 +42,7 @@ public partial class AddCandidateViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void Save()
+    private async Task Save()
     {
         if (string.IsNullOrWhiteSpace(regNumber) || string.IsNullOrWhiteSpace(fullName)) return;
 
@@ -57,7 +57,7 @@ public partial class AddCandidateViewModel : ObservableObject
             _editingCandidate.DepartmentApplied = DepartmentApplied;
             _editingCandidate.JambScore = JambScore;
 
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
         else
         {
@@ -74,7 +74,7 @@ public partial class AddCandidateViewModel : ObservableObject
             };
 
             _db.Candidates.Add(candidate);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
         
         WasSaved = true;

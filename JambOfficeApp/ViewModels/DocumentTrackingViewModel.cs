@@ -3,6 +3,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using JambOfficeApp.Data;
 using JambOfficeApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace JambOfficeApp.ViewModels;
 
@@ -23,13 +24,13 @@ public partial class DocumentTrackingViewModel : ObservableObject
     
     public event Action RequestClose;
 
-    public void LoadForCandidate(Candidate candidate)
+    public async Task LoadForCandidate(Candidate candidate)
     {
         CandidateName = candidate.FullName;
 
-        var existing = _db.DocumentStatuses
+        var existing = await _db.DocumentStatuses
             .Where(d => d.CandidateId == candidate.Id)
-            .ToList();
+            .ToListAsync();
 
         if (existing.Count == 0)
         {
@@ -46,16 +47,16 @@ public partial class DocumentTrackingViewModel : ObservableObject
                 existing.Add(doc);
             }
 
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
         }
 
         Documents = new ObservableCollection<DocumentStatus>(existing);
     }
 
     [RelayCommand]
-    private void SaveAndClose()
+    private async Task SaveAndClose()
     {
-        _db.SaveChanges();
+        await _db.SaveChangesAsync();
         RequestClose?.Invoke();
     }
 }

@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using JambOfficeApp.ViewModels;
 
 namespace JambOfficeApp;
 
@@ -19,5 +20,14 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+    }
+
+    private void TabControl_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (e.Source is TabControl tabControl && tabControl.SelectedIndex == 0 &&
+            DashboardTab.DataContext is DashboardViewModel vm)
+        {
+            vm.RefreshCommand.Execute(null);
+        }
     }
 }
