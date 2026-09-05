@@ -97,7 +97,7 @@ public partial class CandidateListViewModel : ObservableObject
         var saveDialog = new SaveFileDialog
         {
             Filter = "Excel Workbook (*.xlsx)|*.xlsx",
-            FileName = "Candidates.xlxs"
+            FileName = "Candidates.xlsx"
         };
         
         if (saveDialog.ShowDialog() != true) return;
@@ -109,7 +109,7 @@ public partial class CandidateListViewModel : ObservableObject
     }
 
     [RelayCommand]
-    private void OpenAddCandidate()
+    private async Task OpenAddCandidate()
     {
         var dialog = new AddCandidateView
         {
@@ -120,7 +120,7 @@ public partial class CandidateListViewModel : ObservableObject
 
         if (dialog.WasSaved)
         {
-            _ = LoadCandidatesAsync();
+            await LoadCandidatesAsync();
         }
     }
 }
