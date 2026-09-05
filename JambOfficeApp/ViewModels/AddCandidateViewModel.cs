@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices.JavaScript;
+using System.Text.RegularExpressions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using JambOfficeApp.Data;
@@ -22,6 +23,8 @@ public partial class AddCandidateViewModel : ObservableObject
     [ObservableProperty] private string departmentApplied;
     [ObservableProperty] private int jambScore;
     
+    [ObservableProperty] private string errorMessage;
+    
     public bool WasSaved { get; set; }
 
     public event Action RequestClose;
@@ -44,7 +47,7 @@ public partial class AddCandidateViewModel : ObservableObject
     [RelayCommand]
     private async Task Save()
     {
-        if (string.IsNullOrWhiteSpace(regNumber) || string.IsNullOrWhiteSpace(fullName)) return;
+        if (!ValidateFields()) return;
 
         if (IsEditMode && _editingCandidate != null)
         {
@@ -79,6 +82,42 @@ public partial class AddCandidateViewModel : ObservableObject
         
         WasSaved = true;
         RequestClose?.Invoke();
+    }
+
+    private bool ValidateFields()
+    {
+        if (string.IsNullOrWhiteSpace(RegNumber))
+        {
+            ErrorMessage = "Reg Number is required";
+            return false;
+        }
+        
+        if (string.IsNullOrWhiteSpace(FullName))
+        {
+            ErrorMessage = "Full Name is required";
+            return false;
+        }
+
+        if (!string.IsNullOrWhiteSpace(Email) && !Regex.IsMatch(Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+        {
+            ErrorMessage = "Enter a valid email address, or leave it blank.";
+            return false;
+        }
+
+        if (!string.IsNullOrWhiteSpace(PhoneNumber) && !Regex.IsMatch(PhoneNumber, @"^\d{7,15}$"))
+        {
+            ErrorMessage = "Phone number should be 7-15 digits only, or leave it blank.";
+            return false;
+        }
+
+        if (JambScore < 0 || JambScore > 400)
+        {
+            ErrorMessage = "JAMB score must be between 0 and 400";
+            return false;
+        }
+
+        ErrorMessage = null;
+        return true;
     }
 
     [RelayCommand]

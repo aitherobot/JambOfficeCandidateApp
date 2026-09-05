@@ -41,7 +41,12 @@
                  Margin="0,0,0,12"></TextBox>
         
         <TextBox materialDesign:HintAssist.Hint="JAMB Score" Text="{Binding JambScore, UpdateSourceTrigger=PropertyChanged}"
-                 Margin="0,0,0,20"></TextBox>
+                 Margin="0,0,0,12"></TextBox>
+        
+        <TextBlock Text="{Binding ErrorMessage}"
+                   Foreground="Red"
+                   TextWrapping="Wrap"
+                   Margin="0,0,0,12"></TextBlock>
         
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
             <Button Content="Cancel" Command="{Binding CancelCommand}" Style="{StaticResource MaterialDesignOutlinedButton}"
