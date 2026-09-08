@@ -42,6 +42,10 @@ namespace JambOfficeApp.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("InstitutionApplied")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<int>("JambScore")
                         .HasColumnType("INTEGER");
 

@@ -21,6 +21,7 @@ public partial class AddCandidateViewModel : ObservableObject
     [ObservableProperty] private string phoneNumber;
     [ObservableProperty] private string email;
     [ObservableProperty] private string departmentApplied;
+    [ObservableProperty] private string institutionApplied;
     [ObservableProperty] private int jambScore;
     
     [ObservableProperty] private string errorMessage;
@@ -41,6 +42,7 @@ public partial class AddCandidateViewModel : ObservableObject
         PhoneNumber = _editingCandidate.PhoneNumber;
         Email = _editingCandidate.Email;
         DepartmentApplied = _editingCandidate.DepartmentApplied;
+        InstitutionApplied = _editingCandidate.InstitutionApplied;
         JambScore = _editingCandidate.JambScore;
     }
 
@@ -60,6 +62,7 @@ public partial class AddCandidateViewModel : ObservableObject
                 _editingCandidate.PhoneNumber = PhoneNumber;
                 _editingCandidate.Email = Email;
                 _editingCandidate.DepartmentApplied = DepartmentApplied;
+                _editingCandidate.InstitutionApplied = InstitutionApplied;
                 _editingCandidate.JambScore = JambScore;
 
                 await _db.SaveChangesAsync();
@@ -75,6 +78,7 @@ public partial class AddCandidateViewModel : ObservableObject
                     PhoneNumber = PhoneNumber,
                     Email = Email,
                     DepartmentApplied = DepartmentApplied,
+                    InstitutionApplied = InstitutionApplied,
                     JambScore = JambScore
                 };
 

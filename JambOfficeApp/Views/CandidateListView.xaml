@@ -29,6 +29,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Reg Number" Binding="{Binding RegNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Institution" Binding="{Binding InstitutionApplied}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Department" Binding="{Binding DepartmentApplied}"></DataGridTextColumn>
                 <DataGridTextColumn Header="JAMB Score" Binding="{Binding JambScore}"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="Actions">
