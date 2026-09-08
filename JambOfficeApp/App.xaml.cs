@@ -15,7 +15,19 @@ public partial class App : Application
     {
         base.OnStartup(e);
 
-        using (var db = new AppDbContext())
+        DispatcherUnhandledException += (sender, args) =>
+        {
+            MessageBox.Show(
+                $"Something went wrong:\n\n{args.Exception.Message}\n" +
+                $"\nThe app will continue running, but please save your work and restart if this keeps happening.",
+                "Unexpected Error",
+                MessageBoxButton.OK,
+                MessageBoxImage.Error);
+
+            args.Handled = true;
+        };
+
+    using (var db = new AppDbContext())
         {
             db.Database.Migrate();
         }

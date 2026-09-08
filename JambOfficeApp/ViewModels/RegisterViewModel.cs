@@ -31,10 +31,18 @@ public partial class RegisterViewModel : ObservableObject
             return;
         }
 
-        var user = _authService.Register(Username, Password, "Staff");
-        if (user == null)
+        try
         {
-            ErrorMessage = "That username is already taken";
+            var user = _authService.Register(Username, Password, "Staff");
+            if (user == null)
+            {
+                ErrorMessage = "That username is already taken";
+                return;
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Registration Failed: {ex.Message}";
             return;
         }
         

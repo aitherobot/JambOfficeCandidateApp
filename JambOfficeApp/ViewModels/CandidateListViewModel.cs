@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -52,9 +53,17 @@ public partial class CandidateListViewModel : ObservableObject
     {
         if (parameter is not Candidate candidate) return;
 
-        _db.Candidates.Remove(candidate);
-        await _db.SaveChangesAsync();
-        Candidates.Remove(candidate);
+        try
+        {
+            _db.Candidates.Remove(candidate);
+            await _db.SaveChangesAsync();
+            Candidates.Remove(candidate);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Could not delete this candidate: {ex.Message}", "Delete Failed",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     [RelayCommand]
@@ -102,14 +111,29 @@ public partial class CandidateListViewModel : ObservableObject
         
         if (saveDialog.ShowDialog() != true) return;
 
-        var exportService = new ExportService();
-        exportService.ExportCandidatesToExcel(_db.Candidates.AsNoTracking().ToList(), saveDialog.FileName);
-        
-        MessageBox.Show("Export completed successfully.", "Export",  MessageBoxButton.OK, MessageBoxImage.Information);
+        try
+        {
+            var exportService = new ExportService();
+            exportService.ExportCandidatesToExcel(_db.Candidates.AsNoTracking().ToList(), saveDialog.FileName);
+
+            MessageBox.Show("Export completed successfully.", "Export", MessageBoxButton.OK,
+                MessageBoxImage.Information);
+        }
+        catch (IOException)
+        {
+            MessageBox.Show($"Could not save the file. It may be open in Excel already, close it and try again.",
+                "Export Failed",
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Export failed: {ex.Message}", "Export Failed", 
+                MessageBoxButton.OK, MessageBoxImage.Error);
+        }
     }
 
     [RelayCommand]
-    private async Task OpenAddCandidate()
+    private void OpenAddCandidate()
     {
         var dialog = new AddCandidateView
         {
@@ -120,7 +144,7 @@ public partial class CandidateListViewModel : ObservableObject
 
         if (dialog.WasSaved)
         {
-            await LoadCandidatesAsync();
+            _ = LoadCandidatesAsync();
         }
     }
 }

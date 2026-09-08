@@ -49,35 +49,48 @@ public partial class AddCandidateViewModel : ObservableObject
     {
         if (!ValidateFields()) return;
 
-        if (IsEditMode && _editingCandidate != null)
+        try
         {
-            _editingCandidate.RegNumber = RegNumber;
-            _editingCandidate.FullName = FullName;
-            _editingCandidate.DateOfBirth = DateOfBirth ??  DateTime.MinValue;
-            _editingCandidate.Gender = Gender;
-            _editingCandidate.PhoneNumber = PhoneNumber;
-            _editingCandidate.Email = Email;
-            _editingCandidate.DepartmentApplied = DepartmentApplied;
-            _editingCandidate.JambScore = JambScore;
-
-            await _db.SaveChangesAsync();
-        }
-        else
-        {
-            var candidate = new Candidate
+            if (IsEditMode && _editingCandidate != null)
             {
-                RegNumber = RegNumber,
-                FullName = FullName,
-                DateOfBirth = DateOfBirth ?? DateTime.MinValue,
-                Gender = Gender,
-                PhoneNumber = PhoneNumber,
-                Email = Email,
-                DepartmentApplied = DepartmentApplied,
-                JambScore = JambScore
-            };
+                _editingCandidate.RegNumber = RegNumber;
+                _editingCandidate.FullName = FullName;
+                _editingCandidate.DateOfBirth = DateOfBirth ?? DateTime.MinValue;
+                _editingCandidate.Gender = Gender;
+                _editingCandidate.PhoneNumber = PhoneNumber;
+                _editingCandidate.Email = Email;
+                _editingCandidate.DepartmentApplied = DepartmentApplied;
+                _editingCandidate.JambScore = JambScore;
 
-            _db.Candidates.Add(candidate);
-            await _db.SaveChangesAsync();
+                await _db.SaveChangesAsync();
+            }
+            else
+            {
+                var candidate = new Candidate
+                {
+                    RegNumber = RegNumber,
+                    FullName = FullName,
+                    DateOfBirth = DateOfBirth ?? DateTime.MinValue,
+                    Gender = Gender,
+                    PhoneNumber = PhoneNumber,
+                    Email = Email,
+                    DepartmentApplied = DepartmentApplied,
+                    JambScore = JambScore
+                };
+
+                _db.Candidates.Add(candidate);
+                await _db.SaveChangesAsync();
+            }
+        }
+        catch (Microsoft.EntityFrameworkCore.DbUpdateException)
+        {
+            ErrorMessage = "Could not save this candidate. Check that the Reg Number is not already in use.";
+            return;
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"An unexpected error occured while saving: {ex.Message}";
+            return;
         }
         
         WasSaved = true;

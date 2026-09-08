@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using JambOfficeApp.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +13,8 @@ public class AppDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=jamboffice.db");
+        string dbPath = Path.Combine(AppContext.BaseDirectory, "jamboffice.db");
+        optionsBuilder.UseSqlite($"Data Source={dbPath}");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -29,7 +29,17 @@ public partial class LoginViewModel : ObservableObject
             return;
         }
 
-        var user = _authService.Login(Username, Password);
+        User user;
+        try
+        {
+            user = _authService.Login(Username, Password);
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Login failed: {ex.Message}";
+            return;
+        }
+        
         if (user == null)
         {
             ErrorMessage = "Invalid username or password";
