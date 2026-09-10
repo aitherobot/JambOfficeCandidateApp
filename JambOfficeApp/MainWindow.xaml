@@ -8,7 +8,7 @@
         xmlns:local="clr-namespace:JambOfficeApp"
         mc:Ignorable="d"
         Title="JAMB Office - Candidate Records"
-        Height="650" Width="1000"
+        Height="650" Width="1150"
         WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
         Background="{DynamicResource MaterialDesign.Brush.Background}"
@@ -23,12 +23,16 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         
-        <materialDesign:ColorZone Mode="PrimaryMid" Padding="16"
+        <materialDesign:ColorZone Mode="PrimaryDark" Padding="20, 16"
                                   materialDesign:ElevationAssist.Elevation="Dp4">
-            <TextBlock Text="Jamb Office - Candidates Record Management" FontSize="18" VerticalAlignment="Center"></TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="JAMB OFFICE" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                <TextBlock Text="Candidates Records Management" FontSize="14" Opacity= "0.75"
+                           VerticalAlignment="Center" Margin="12, 3, 0,0" Foreground="White"></TextBlock>
+            </StackPanel>
         </materialDesign:ColorZone>
         
-        <TabControl Grid.Row="1" materialDesign:ColorZoneAssist.Mode="PrimaryLight" SelectionChanged="TabControl_OnSelectionChanged">
+        <TabControl Grid.Row="1" materialDesign:ColorZoneAssist.Mode="PrimaryDark" SelectionChanged="TabControl_OnSelectionChanged">
             <TabItem Header="Dashboard">
                 <views:DashboardView x:Name="DashboardTab"></views:DashboardView>
             </TabItem>

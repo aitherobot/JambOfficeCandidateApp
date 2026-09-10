@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:vm="clr-namespace:JambOfficeApp.ViewModels"
              xmlns:local="clr-namespace:JambOfficeApp.Views"
              mc:Ignorable="d">
@@ -25,7 +26,9 @@
             <Button Content="Export To Excel" Command="{Binding ExportToExcelCommand}" Margin="8,0,0,0"></Button>
         </StackPanel>
         
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Candidates}" AutoGenerateColumns="False" CanUserAddRows="False">
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Candidates}" AutoGenerateColumns="False" CanUserAddRows="False"
+                  materialDesign:DataGridAssist.CellPadding="12, 8"
+                  materialDesign:DataGridAssist.ColumnHeaderPadding="12, 8" RowHeight="44">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Reg Number" Binding="{Binding RegNumber}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}"></DataGridTextColumn>
@@ -39,16 +42,19 @@
                                 <Button Content="Edit" 
                                         Command="{Binding DataContext.EditCandidateCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                         CommandParameter="{Binding}"
+                                        Padding="10, 4" FontSize="11"
                                         Margin="0,0,4,0"></Button>
                                 
                                 <Button Content="Documents" 
                                         Command="{Binding DataContext.OpenDocumentTrackingCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                         CommandParameter="{Binding}"
+                                        Padding="10, 4" FontSize="11"
                                         Margin="0,0,4,0"></Button>
                                 
                                 <Button Content="Delete" 
                                         Command="{Binding DataContext.DeleteCandidateCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
                                         CommandParameter="{Binding}"
+                                        Padding="10, 4" FontSize="11"
                                         Margin="0,0,4,0"></Button>
                             </StackPanel>
                         </DataTemplate>

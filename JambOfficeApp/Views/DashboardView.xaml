@@ -21,26 +21,50 @@
             <TextBlock Text="Dashboard" FontSize="22" FontWeight="Bold" VerticalAlignment="Center"></TextBlock>
         </StackPanel>
         
-        <UniformGrid Grid.Row="1" Columns="3" Rows="1">
-            <materialDesign:Card Margin="8" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="Total Candidates" FontSize="14" Opacity="0.7"/>
-                    <TextBlock Text="{Binding TotalCandidates}" FontSize="36" FontWeight="Bold" Margin="0,8,0,0"/>
-                </StackPanel>
+        <UniformGrid Grid.Row="1" Columns="3" Rows="1" VerticalAlignment="Top" MaxHeight="140">
+            <materialDesign:Card Margin="8" Padding="0" UniformCornerRadius="6">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="DarkBlue"></Border>
+                    <StackPanel Grid.Column="1" Margin="20">
+                        <TextBlock Text="TOTAL CANDIDATES" FontSize="12" FontWeight="Medium" Opacity="0.6"/>
+                        <TextBlock Text="{Binding TotalCandidates}" FontSize="40" FontWeight="Bold"
+                                   Margin="0, 6,0,0" Foreground="DarkBlue"/>
+                    </StackPanel>
+                </Grid>
             </materialDesign:Card>
             
-            <materialDesign:Card Margin="8" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="Pending Verification" FontSize="14" Opacity="0.7"></TextBlock>
-                    <TextBlock Text="{Binding DocumentsPendingVerification}" FontSize="36" FontWeight="Bold" Margin="0,8,0,0"></TextBlock>
-                </StackPanel>
+            <materialDesign:Card Margin="8" Padding="0" UniformCornerRadius="6">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="DarkGoldenrod"></Border>
+                    <StackPanel Grid.Column="1" Margin="20">
+                        <TextBlock Text="PENDING VERIFICATION" FontSize="12" FontWeight="Medium" Opacity="0.6"></TextBlock>
+                        <TextBlock Text="{Binding DocumentsPendingVerification}" FontSize="40" FontWeight="Bold"
+                                   Margin="0,6,0,0" Foreground="DarkGoldenrod"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </materialDesign:Card>
             
-            <materialDesign:Card Margin="8" Padding="20">
-                <StackPanel>
-                    <TextBlock Text="Documents Verified" FontSize="14" Opacity="0.7"></TextBlock>
-                    <TextBlock Text="{Binding DocumentsFullyVerified}" FontSize="36" FontWeight="Bold" Margin="0,8,0,0"></TextBlock>
-                </StackPanel>
+            <materialDesign:Card Margin="8" Padding="0" UniformCornerRadius="6">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Border Background="Green"></Border>
+                    <StackPanel Grid.Column="1" Margin="20">
+                        <TextBlock Text="DOCUMENTS VERIFIED" FontSize="12" Opacity="0.6"></TextBlock>
+                        <TextBlock Text="{Binding DocumentsFullyVerified}" FontSize="40" FontWeight="Bold" 
+                                   Margin="0,6,0,0" Foreground="Green"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </materialDesign:Card>
         </UniformGrid>
     </Grid>
