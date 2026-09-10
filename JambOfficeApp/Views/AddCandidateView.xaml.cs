@@ -22,7 +22,7 @@ public partial class AddCandidateView : Window
         {
             await vm.LoadForEdit(candidate);
             Title = "Edit Candidate";
-            HeaderText.Text="Edit Candidate";
+            HeaderText.Text="EDIT CANDIDATE";
         }
     }
     
