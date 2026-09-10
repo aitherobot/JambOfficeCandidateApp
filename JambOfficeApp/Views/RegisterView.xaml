@@ -15,8 +15,9 @@
         <vm:RegisterViewModel></vm:RegisterViewModel>
     </Window.DataContext>
     
-    <StackPanel Margin="24" VerticalAlignment="Center">
-        <TextBlock Text="Create Staff Account" FontSize="18" FontWeight="Bold" Margin="0,0,0,16" HorizontalAlignment="Center"></TextBlock>
+    <StackPanel Margin="32" VerticalAlignment="Center">
+        <TextBlock Text="CREATE STAFF ACCOUNT" FontSize="18" FontWeight="Bold" Foreground="Indigo"
+                   Margin="0,0,0,20" HorizontalAlignment="Center"></TextBlock>
         
         <TextBox materialDesign:HintAssist.Hint="Username"
                  Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
@@ -37,6 +38,6 @@
                    TextWrapping="Wrap"
                    Margin="0,0,0,12"></TextBlock>
         
-        <Button Content="Register" Command="{Binding RegisterCommand}"></Button>
+        <Button Content="REGISTER" Command="{Binding RegisterCommand}" Height="40"></Button>
     </StackPanel>
 </Window>
