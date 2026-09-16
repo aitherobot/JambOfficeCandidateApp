@@ -9,7 +9,7 @@
         Title="Login" Height="360" Width="360"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        FontFamily="/Resources/Fonts/Inter">
+        FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>
         <vm:LoginViewModel></vm:LoginViewModel>

@@ -185,4 +185,31 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-Bold.ttf">
+        <Link>Resources\Sora\Sora-Bold.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-ExtraBold.ttf">
+        <Link>Resources\Sora\Sora-ExtraBold.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-ExtraLight.ttf">
+        <Link>Resources\Sora\Sora-ExtraLight.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-Light.ttf">
+        <Link>Resources\Sora\Sora-Light.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-Medium.ttf">
+        <Link>Resources\Sora\Sora-Medium.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-Regular.ttf">
+        <Link>Resources\Sora\Sora-Regular.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-SemiBold.ttf">
+        <Link>Resources\Sora\Sora-SemiBold.ttf</Link>
+      </Resource>
+      <Resource Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Sora\Sora-Thin.ttf">
+        <Link>Resources\Sora\Sora-Thin.ttf</Link>
+      </Resource>
+    </ItemGroup>
+
 </Project>

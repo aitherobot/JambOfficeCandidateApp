@@ -10,7 +10,7 @@
         Title="Add Candidate" Height="560" Width="420"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        FontFamily="/Resources/Fonts/Inter">
+        FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>
         <vm:AddCandidateViewModel></vm:AddCandidateViewModel>

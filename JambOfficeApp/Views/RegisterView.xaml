@@ -9,7 +9,7 @@
         Title="Create Account" Height="400" Width="360"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        FontFamily="/Resources/Fonts/Inter">
+        FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>
         <vm:RegisterViewModel></vm:RegisterViewModel>

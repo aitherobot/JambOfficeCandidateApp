@@ -9,7 +9,7 @@
         Title="Document Tracking" Height="429" Width="440"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        FontFamily="/Resources/Fonts/Inter">
+        FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>
         <vm:DocumentTrackingViewModel></vm:DocumentTrackingViewModel>

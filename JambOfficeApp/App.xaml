@@ -9,6 +9,7 @@
                  <materialDesign:BundledTheme BaseTheme="Light" PrimaryColor="Indigo" SecondaryColor="Amber" />
                  <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesign3.Defaults.xaml" /> 
              </ResourceDictionary.MergedDictionaries>
+             <FontFamily x:Key="SoraFontFamily">pack://application:,,,/Resources/Sora/#Sora</FontFamily>
          </ResourceDictionary>
     </Application.Resources>
 </Application>
