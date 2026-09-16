@@ -9,14 +9,14 @@
         Title="Document Tracking" Height="429" Width="440"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        FontFamily="{materialDesign:MaterialDesignFont}">
+        FontFamily="/Resources/Fonts/Inter">
     
     <Window.DataContext>
         <vm:DocumentTrackingViewModel></vm:DocumentTrackingViewModel>
     </Window.DataContext>
     
     <StackPanel Margin="24">
-        <TextBlock Text="DOCUMENT CHECKLIST" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource PrimaryHueDarkBrush}"
+        <TextBlock Text="DOCUMENT CHECKLIST" FontSize="14" FontWeight="Bold" Foreground="Indigo"
                    Opacity="0.7"></TextBlock>
         <TextBlock Text="{Binding CandidateName}" FontSize="18" FontWeight="Bold" Margin="0,2,0,20"></TextBlock>
         

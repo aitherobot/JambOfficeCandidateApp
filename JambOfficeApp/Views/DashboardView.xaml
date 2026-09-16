@@ -30,7 +30,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Background="DarkBlue"></Border>
                     <StackPanel Grid.Column="1" Margin="20">
-                        <TextBlock Text="TOTAL CANDIDATES" FontSize="12" FontWeight="Medium" Opacity="0.6"/>
+                        <TextBlock Text="TOTAL CANDIDATES" FontSize="12" FontWeight="Medium" Opacity="0.8"/>
                         <TextBlock Text="{Binding TotalCandidates}" FontSize="40" FontWeight="Bold"
                                    Margin="0, 6,0,0" Foreground="DarkBlue"/>
                     </StackPanel>
@@ -45,7 +45,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Background="DarkGoldenrod"></Border>
                     <StackPanel Grid.Column="1" Margin="20">
-                        <TextBlock Text="PENDING VERIFICATION" FontSize="12" FontWeight="Medium" Opacity="0.6"></TextBlock>
+                        <TextBlock Text="PENDING VERIFICATION" FontSize="12" FontWeight="Medium" Opacity="0.8"></TextBlock>
                         <TextBlock Text="{Binding DocumentsPendingVerification}" FontSize="40" FontWeight="Bold"
                                    Margin="0,6,0,0" Foreground="DarkGoldenrod"></TextBlock>
                     </StackPanel>
@@ -60,7 +60,7 @@
                     </Grid.ColumnDefinitions>
                     <Border Background="Green"></Border>
                     <StackPanel Grid.Column="1" Margin="20">
-                        <TextBlock Text="DOCUMENTS VERIFIED" FontSize="12" Opacity="0.6"></TextBlock>
+                        <TextBlock Text="DOCUMENTS VERIFIED" FontSize="12" FontWeight="Medium" Opacity="0.8"></TextBlock>
                         <TextBlock Text="{Binding DocumentsFullyVerified}" FontSize="40" FontWeight="Bold" 
                                    Margin="0,6,0,0" Foreground="Green"></TextBlock>
                     </StackPanel>

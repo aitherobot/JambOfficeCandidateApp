@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesign.Brush.Background}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
-        FontFamily="{materialDesign:MaterialDesignFont}"
+        FontFamily="/Resources/Fonts/Inter"
         Style="{StaticResource MaterialDesignWindow}">
     
     <Grid>

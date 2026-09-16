@@ -20,4 +20,169 @@
       </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Black.ttf">
+        <Link>Resources\Inter\Inter_18pt-Black.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-BlackItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-BlackItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Bold.ttf">
+        <Link>Resources\Inter\Inter_18pt-Bold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-BoldItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-BoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-ExtraBold.ttf">
+        <Link>Resources\Inter\Inter_18pt-ExtraBold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-ExtraBoldItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-ExtraBoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-ExtraLight.ttf">
+        <Link>Resources\Inter\Inter_18pt-ExtraLight.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-ExtraLightItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-ExtraLightItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Italic.ttf">
+        <Link>Resources\Inter\Inter_18pt-Italic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Light.ttf">
+        <Link>Resources\Inter\Inter_18pt-Light.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-LightItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-LightItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Medium.ttf">
+        <Link>Resources\Inter\Inter_18pt-Medium.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-MediumItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-MediumItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Regular.ttf">
+        <Link>Resources\Inter\Inter_18pt-Regular.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-SemiBold.ttf">
+        <Link>Resources\Inter\Inter_18pt-SemiBold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-SemiBoldItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-SemiBoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-Thin.ttf">
+        <Link>Resources\Inter\Inter_18pt-Thin.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_18pt-ThinItalic.ttf">
+        <Link>Resources\Inter\Inter_18pt-ThinItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Black.ttf">
+        <Link>Resources\Inter\Inter_24pt-Black.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-BlackItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-BlackItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Bold.ttf">
+        <Link>Resources\Inter\Inter_24pt-Bold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-BoldItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-BoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-ExtraBold.ttf">
+        <Link>Resources\Inter\Inter_24pt-ExtraBold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-ExtraBoldItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-ExtraBoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-ExtraLight.ttf">
+        <Link>Resources\Inter\Inter_24pt-ExtraLight.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-ExtraLightItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-ExtraLightItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Italic.ttf">
+        <Link>Resources\Inter\Inter_24pt-Italic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Light.ttf">
+        <Link>Resources\Inter\Inter_24pt-Light.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-LightItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-LightItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Medium.ttf">
+        <Link>Resources\Inter\Inter_24pt-Medium.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-MediumItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-MediumItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Regular.ttf">
+        <Link>Resources\Inter\Inter_24pt-Regular.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-SemiBold.ttf">
+        <Link>Resources\Inter\Inter_24pt-SemiBold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-SemiBoldItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-SemiBoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-Thin.ttf">
+        <Link>Resources\Inter\Inter_24pt-Thin.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_24pt-ThinItalic.ttf">
+        <Link>Resources\Inter\Inter_24pt-ThinItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Black.ttf">
+        <Link>Resources\Inter\Inter_28pt-Black.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-BlackItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-BlackItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Bold.ttf">
+        <Link>Resources\Inter\Inter_28pt-Bold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-BoldItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-BoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-ExtraBold.ttf">
+        <Link>Resources\Inter\Inter_28pt-ExtraBold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-ExtraBoldItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-ExtraBoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-ExtraLight.ttf">
+        <Link>Resources\Inter\Inter_28pt-ExtraLight.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-ExtraLightItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-ExtraLightItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Italic.ttf">
+        <Link>Resources\Inter\Inter_28pt-Italic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Light.ttf">
+        <Link>Resources\Inter\Inter_28pt-Light.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-LightItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-LightItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Medium.ttf">
+        <Link>Resources\Inter\Inter_28pt-Medium.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-MediumItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-MediumItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Regular.ttf">
+        <Link>Resources\Inter\Inter_28pt-Regular.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-SemiBold.ttf">
+        <Link>Resources\Inter\Inter_28pt-SemiBold.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-SemiBoldItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-SemiBoldItalic.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-Thin.ttf">
+        <Link>Resources\Inter\Inter_28pt-Thin.ttf</Link>
+      </Content>
+      <Content Include="..\..\..\..\.nuget\packages\materialdesignthemes\5.3.2\contentFiles\any\net10.0-windows7.0\Resources\Inter\Inter_28pt-ThinItalic.ttf">
+        <Link>Resources\Inter\Inter_28pt-ThinItalic.ttf</Link>
+      </Content>
+    </ItemGroup>
+
 </Project>

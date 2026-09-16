@@ -9,14 +9,14 @@
         Title="Login" Height="360" Width="360"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        FontFamily="{materialDesign:MaterialDesignFont}">
+        FontFamily="/Resources/Fonts/Inter">
     
     <Window.DataContext>
         <vm:LoginViewModel></vm:LoginViewModel>
     </Window.DataContext>
     
     <StackPanel Margin="32" VerticalAlignment="Center">
-        <TextBlock Text="JAMB OFFICE" FontSize="22" FontWeight="Bold" Foreground="{DynamicResource PrimaryHueDarkBrush}"
+        <TextBlock Text="JAMB OFFICE" FontSize="22" FontWeight="Bold" Foreground="Indigo"
                    HorizontalAlignment="Center"></TextBlock>
         <TextBlock Text="Candidates Record Management" FontSize="13" Opacity="0.6" Margin="0, 2, 0, 20" HorizontalAlignment="Center"></TextBlock>
         

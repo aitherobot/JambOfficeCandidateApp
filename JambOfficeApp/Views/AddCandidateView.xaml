@@ -10,14 +10,14 @@
         Title="Add Candidate" Height="560" Width="420"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
-        FontFamily="{materialDesign:MaterialDesignFont}">
+        FontFamily="/Resources/Fonts/Inter">
     
     <Window.DataContext>
         <vm:AddCandidateViewModel></vm:AddCandidateViewModel>
     </Window.DataContext>
     
     <StackPanel Margin="24">
-        <TextBlock x:Name="HeaderText" Text="NEW CANDIDATE" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource PrimaryHueDarkBrush}"
+        <TextBlock x:Name="HeaderText" Text="NEW CANDIDATE" FontSize="16" FontWeight="Bold" Foreground="Indigo"
                    Margin="0,0,0,20"></TextBlock>
         
         <TextBox materialDesign:HintAssist.Hint="Reg Number" Text="{Binding RegNumber, UpdateSourceTrigger=PropertyChanged}"
