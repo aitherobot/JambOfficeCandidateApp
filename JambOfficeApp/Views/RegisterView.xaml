@@ -9,6 +9,8 @@
         Title="Create Account" Height="400" Width="360"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>

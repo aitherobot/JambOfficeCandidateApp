@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows;
 using JambOfficeApp.Data;
+using JambOfficeApp.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace JambOfficeApp;
@@ -27,10 +28,13 @@ public partial class App : Application
             args.Handled = true;
         };
 
-    using (var db = new AppDbContext())
+        using (var db = new AppDbContext())
         {
             db.Database.Migrate();
         }
+
+        bool startInDarkMode = ThemeService.IsWindowsInDarkMode();
+        ThemeService.ApplyTheme(startInDarkMode);
         
         ShutdownMode = ShutdownMode.OnExplicitShutdown;
         

@@ -9,6 +9,8 @@
         Title="Login" Height="360" Width="360"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>

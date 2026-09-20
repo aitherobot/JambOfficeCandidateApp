@@ -9,6 +9,8 @@
         Title="Document Tracking" Height="429" Width="440"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>

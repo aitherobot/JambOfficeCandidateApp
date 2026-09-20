@@ -25,14 +25,25 @@
         
         <materialDesign:ColorZone Mode="PrimaryDark" Padding="20, 16"
                                   materialDesign:ElevationAssist.Elevation="Dp4">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="JAMB OFFICE" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Foreground="White"></TextBlock>
-                <TextBlock Text="Candidates Records Management" FontSize="14" Opacity= "0.75"
-                           VerticalAlignment="Center" Margin="12, 3, 0,0" Foreground="White"></TextBlock>
-            </StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="JAMB OFFICE" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" Foreground="White"></TextBlock>
+                    <TextBlock Text="Candidates Records Management" FontSize="14" Opacity= "0.75"
+                               VerticalAlignment="Center" Margin="12, 3, 0,0" Foreground="White"></TextBlock>
+                </StackPanel>
+                
+                <ToggleButton Grid.Column="1" x:Name="DarkModeToggle" Style="{StaticResource MaterialDesignSwitchToggleButton}"
+                              Checked="DarkModeToggle_OnToggled" Unchecked="DarkModeToggle_OnToggled" VerticalAlignment="Center"
+                              ToolTip="Toggle mark mode"></ToggleButton>
+            </Grid>
         </materialDesign:ColorZone>
         
-        <TabControl Grid.Row="1" materialDesign:ColorZoneAssist.Mode="PrimaryDark" SelectionChanged="TabControl_OnSelectionChanged">
+        <TabControl Grid.Row="1" SelectionChanged="TabControl_OnSelectionChanged">
             <TabItem Header="Dashboard">
                 <views:DashboardView x:Name="DashboardTab"></views:DashboardView>
             </TabItem>

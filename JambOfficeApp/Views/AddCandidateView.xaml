@@ -10,6 +10,8 @@
         Title="Add Candidate" Height="560" Width="420"
         WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
         FontFamily="{StaticResource SoraFontFamily}">
     
     <Window.DataContext>
@@ -41,8 +43,9 @@
         <TextBox materialDesign:HintAssist.Hint="Institution Applied" Text="{Binding InstitutionApplied, UpdateSourceTrigger=PropertyChanged}"
                  Margin="0,0,0,12"></TextBox>
         
-        <TextBox materialDesign:HintAssist.Hint="Department Applied" Text="{Binding DepartmentApplied, UpdateSourceTrigger=PropertyChanged}"
-                 Margin="0,0,0,12"></TextBox>
+        <ComboBox materialDesign:HintAssist.Hint="Department Applied" ItemsSource="{Binding DepartmentOptionsList}" 
+                  SelectedItem="{Binding DepartmentApplied, UpdateSourceTrigger=PropertyChanged}"
+                  Margin="0,0,0,12"></ComboBox>
         
         <TextBox materialDesign:HintAssist.Hint="JAMB Score" Text="{Binding JambScore, UpdateSourceTrigger=PropertyChanged}"
                  Margin="0,0,0,12"></TextBox>

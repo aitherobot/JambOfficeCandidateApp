@@ -23,6 +23,22 @@ public partial class AddCandidateViewModel : ObservableObject
     [ObservableProperty] private string departmentApplied;
     [ObservableProperty] private string institutionApplied;
     [ObservableProperty] private int jambScore;
+
+    public static readonly string[] DepartmentOptions =
+    {
+        "Computer Science",
+        "Computer Engineering",
+        "Electrical Engineering",
+        "Mechanical Engineering",
+        "Civil Engineering",
+        "Accountancy",
+        "Business Administration",
+        "Mass Communication",
+        "Estate Management",
+        "Statistics"
+    };
+    
+    public string[] DepartmentOptionsList => DepartmentOptions;
     
     [ObservableProperty] private string errorMessage;
     
