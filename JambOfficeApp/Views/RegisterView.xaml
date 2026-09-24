@@ -18,7 +18,7 @@
     </Window.DataContext>
     
     <StackPanel Margin="32" VerticalAlignment="Center">
-        <TextBlock Text="CREATE STAFF ACCOUNT" FontSize="18" FontWeight="Bold" Foreground="Indigo"
+        <TextBlock Text="CREATE STAFF ACCOUNT" FontSize="18" FontWeight="Bold" Foreground="#0D2C54"
                    Margin="0,0,0,20" HorizontalAlignment="Center"></TextBlock>
         
         <TextBox materialDesign:HintAssist.Hint="Username"

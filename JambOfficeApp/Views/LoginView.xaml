@@ -18,7 +18,7 @@
     </Window.DataContext>
     
     <StackPanel Margin="32" VerticalAlignment="Center">
-        <TextBlock Text="JAMB OFFICE" FontSize="22" FontWeight="Bold" Foreground="Indigo"
+        <TextBlock Text="JAMB OFFICE" FontSize="22" FontWeight="Bold" Foreground="#0D2C54"
                    HorizontalAlignment="Center"></TextBlock>
         <TextBlock Text="Candidates Record Management" FontSize="13" Opacity="0.6" Margin="0, 2, 0, 20" HorizontalAlignment="Center"></TextBlock>
         

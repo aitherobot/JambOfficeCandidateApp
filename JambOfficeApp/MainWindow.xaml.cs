@@ -24,14 +24,17 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
+        // an event subscriber and unsubscriber for checking and setting dark mode.
         bool isDark = ThemeService.IsWindowsInDarkMode();
         DarkModeToggle.Checked -= DarkModeToggle_OnToggled;
         DarkModeToggle.Unchecked -= DarkModeToggle_OnToggled;
         DarkModeToggle.IsChecked = isDark;
         DarkModeToggle.Checked += DarkModeToggle_OnToggled;
         DarkModeToggle.Unchecked += DarkModeToggle_OnToggled;
+    
 
         SourceInitialized += (s, e) => SetTitleBarTheme(isDark);
+    
     }
 
     private void TabControl_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -43,6 +46,7 @@ public partial class MainWindow : Window
         }
     }
 
+    // An event method for the code-behind that actually executes the logic for the dark mode check and application
     private void DarkModeToggle_OnToggled(object sender, RoutedEventArgs e)
     {
         bool isDark = DarkModeToggle.IsChecked == true;
@@ -50,17 +54,9 @@ public partial class MainWindow : Window
         SetTitleBarTheme(isDark);
     }
 
-    [DllImport("dwmapi.dll")]
-    private static extern int DwmSetWindowAttribute(IntPtr hwnd, int attribute, ref int pvAttribute, int cbAttribute);
-
-    private const int DwmaUseImmersiveDarkMode = 20;
-
     public void SetTitleBarTheme(bool isDark)
     {
         var hwnd = new WindowInteropHelper(this).Handle;
-        if (hwnd == IntPtr.Zero) return;
-
-        int useDark = isDark ? 1 : 0;
-        DwmSetWindowAttribute(hwnd, DwmaUseImmersiveDarkMode, ref useDark, sizeof(int));
+        ThemeService.SetTitleBarTheme(hwnd, isDark);
     }
 }

@@ -33,8 +33,8 @@ public partial class App : Application
             db.Database.Migrate();
         }
 
-        bool startInDarkMode = ThemeService.IsWindowsInDarkMode();
-        ThemeService.ApplyTheme(startInDarkMode);
+        // bool startInDarkMode = ThemeService.IsWindowsInDarkMode();
+        // ThemeService.ApplyTheme(startInDarkMode);
         
         ShutdownMode = ShutdownMode.OnExplicitShutdown;
         

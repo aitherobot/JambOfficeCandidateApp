@@ -30,11 +30,11 @@
                   materialDesign:DataGridAssist.CellPadding="12, 8"
                   materialDesign:DataGridAssist.ColumnHeaderPadding="12, 8" RowHeight="44">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Reg Number" Binding="{Binding RegNumber}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Institution" Binding="{Binding InstitutionApplied}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Department" Binding="{Binding DepartmentApplied}"></DataGridTextColumn>
-                <DataGridTextColumn Header="JAMB Score" Binding="{Binding JambScore}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Reg Number" Binding="{Binding RegNumber}" FontWeight="SemiBold"></DataGridTextColumn>
+                <DataGridTextColumn Header="Full Name" Binding="{Binding FullName}" FontWeight="SemiBold"></DataGridTextColumn>
+                <DataGridTextColumn Header="Institution" Binding="{Binding InstitutionApplied}" FontWeight="SemiBold"></DataGridTextColumn>
+                <DataGridTextColumn Header="Department" Binding="{Binding DepartmentApplied}" FontWeight="SemiBold"></DataGridTextColumn>
+                <DataGridTextColumn Header="JAMB Score" Binding="{Binding JambScore}" FontWeight="SemiBold"></DataGridTextColumn>
                 <DataGridTemplateColumn Header="Actions">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
