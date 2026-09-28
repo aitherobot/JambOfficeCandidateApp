@@ -37,9 +37,9 @@
                                VerticalAlignment="Center" Margin="12, 3, 0,0" Foreground="White"></TextBlock>
                 </StackPanel>
                 
-                <ToggleButton Grid.Column="1" x:Name="DarkModeToggle" Style="{StaticResource MaterialDesignSwitchToggleButton}"
-                              Checked="DarkModeToggle_OnToggled" Unchecked="DarkModeToggle_OnToggled" VerticalAlignment="Center"
-                              ToolTip="Toggle mark mode"></ToggleButton>
+                <!-- <ToggleButton Grid.Column="1" x:Name="DarkModeToggle" Style="{StaticResource MaterialDesignSwitchToggleButton}" -->
+                <!--               Checked="DarkModeToggle_OnToggled" Unchecked="DarkModeToggle_OnToggled" VerticalAlignment="Center" -->
+                <!--               ToolTip="Toggle mark mode"></ToggleButton> -->
             </Grid>
         </materialDesign:ColorZone>
         

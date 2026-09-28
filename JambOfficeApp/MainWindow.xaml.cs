@@ -25,15 +25,15 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         // an event subscriber and unsubscriber for checking and setting dark mode.
-        bool isDark = ThemeService.IsWindowsInDarkMode();
-        DarkModeToggle.Checked -= DarkModeToggle_OnToggled;
-        DarkModeToggle.Unchecked -= DarkModeToggle_OnToggled;
-        DarkModeToggle.IsChecked = isDark;
-        DarkModeToggle.Checked += DarkModeToggle_OnToggled;
-        DarkModeToggle.Unchecked += DarkModeToggle_OnToggled;
-    
-
-        SourceInitialized += (s, e) => SetTitleBarTheme(isDark);
+        // bool isDark = ThemeService.IsWindowsInDarkMode();
+        // DarkModeToggle.Checked -= DarkModeToggle_OnToggled;
+        // DarkModeToggle.Unchecked -= DarkModeToggle_OnToggled;
+        // DarkModeToggle.IsChecked = isDark;
+        // DarkModeToggle.Checked += DarkModeToggle_OnToggled;
+        // DarkModeToggle.Unchecked += DarkModeToggle_OnToggled;
+        //
+        //
+        // SourceInitialized += (s, e) => SetTitleBarTheme(isDark);
     
     }
 
@@ -47,12 +47,12 @@ public partial class MainWindow : Window
     }
 
     // An event method for the code-behind that actually executes the logic for the dark mode check and application
-    private void DarkModeToggle_OnToggled(object sender, RoutedEventArgs e)
-    {
-        bool isDark = DarkModeToggle.IsChecked == true;
-        ThemeService.ApplyTheme(isDark);
-        SetTitleBarTheme(isDark);
-    }
+    // private void DarkModeToggle_OnToggled(object sender, RoutedEventArgs e)
+    // {
+    //     bool isDark = DarkModeToggle.IsChecked == true;
+    //     ThemeService.ApplyTheme(isDark);
+    //     SetTitleBarTheme(isDark);
+    // }
 
     public void SetTitleBarTheme(bool isDark)
     {

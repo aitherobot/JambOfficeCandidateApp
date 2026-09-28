@@ -17,11 +17,11 @@ public partial class AddCandidateView : Window
             vm.RequestClose += () => Close();
         }
         
-        SourceInitialized += (s, e) =>
-        {
-            var hwnd = new WindowInteropHelper(this).Handle;
-            ThemeService.SetTitleBarTheme(hwnd, ThemeService.IsWindowsInDarkMode());
-        };
+        // SourceInitialized += (s, e) =>
+        // {
+        //     var hwnd = new WindowInteropHelper(this).Handle;
+        //     ThemeService.SetTitleBarTheme(hwnd, ThemeService.IsWindowsInDarkMode());
+        // };
     }
 
     public async Task SetEditCandidateAsync(Candidate candidate)
